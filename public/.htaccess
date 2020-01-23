@@ -1,0 +1,9 @@
+﻿# HTID:11736885: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:11736885:
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+# QSA - позволяет добавлять параметры в строке запроса
+RewriteRule (.*) index.php?$1 [QSA,L]
