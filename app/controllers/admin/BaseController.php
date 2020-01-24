@@ -12,8 +12,5 @@ class BaseController extends Controller
     public function __construct($route)
     {
         parent::__construct($route);
-        if (!Users::isAdmin()) {
-            redirect('/');
-        }
     }
 }

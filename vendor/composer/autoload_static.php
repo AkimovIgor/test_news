@@ -36,11 +36,35 @@ class ComposerStaticInit82471bdff272d3c5119a0ef537e1001b
         ),
     );
 
+    public static $classMap = array (
+        'App\\Controllers\\Admin\\BaseController' => __DIR__ . '/../..' . '/app/controllers/admin/BaseController.php',
+        'App\\Controllers\\Admin\\CommentController' => __DIR__ . '/../..' . '/app/controllers/admin/CommentController.php',
+        'App\\Controllers\\Admin\\NewsController' => __DIR__ . '/../..' . '/app/controllers/admin/NewsController.php',
+        'App\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/controllers/BaseController.php',
+        'App\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/controllers/MainController.php',
+        'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/controllers/UserController.php',
+        'App\\Models\\Comments' => __DIR__ . '/../..' . '/app/models/Comments.php',
+        'App\\Models\\News' => __DIR__ . '/../..' . '/app/models/News.php',
+        'App\\Models\\Users' => __DIR__ . '/../..' . '/app/models/Users.php',
+        'Igoframework\\Core\\App' => __DIR__ . '/..' . '/igoframework/core/App.php',
+        'Igoframework\\Core\\Base\\Controller' => __DIR__ . '/..' . '/igoframework/core/base/Controller.php',
+        'Igoframework\\Core\\Base\\Model' => __DIR__ . '/..' . '/igoframework/core/base/Model.php',
+        'Igoframework\\Core\\Base\\View' => __DIR__ . '/..' . '/igoframework/core/base/View.php',
+        'Igoframework\\Core\\Database\\Db' => __DIR__ . '/..' . '/igoframework/core/database/Db.php',
+        'Igoframework\\Core\\Exceptions\\ExceptionsHandler' => __DIR__ . '/..' . '/igoframework/core/exceptions/ExceptionsHandler.php',
+        'Igoframework\\Core\\Exceptions\\NotFoundException' => __DIR__ . '/..' . '/igoframework/core/exceptions/NotFoundException.php',
+        'Igoframework\\Core\\Pagination\\Paginator' => __DIR__ . '/..' . '/igoframework/core/pagination/Paginator.php',
+        'Igoframework\\Core\\Routing\\Router' => __DIR__ . '/..' . '/igoframework/core/routing/Router.php',
+        'Igoframework\\Core\\Traits\\TSingletone' => __DIR__ . '/..' . '/igoframework/core/traits/TSingletone.php',
+        'Valitron\\Validator' => __DIR__ . '/..' . '/vlucas/valitron/src/Valitron/Validator.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit82471bdff272d3c5119a0ef537e1001b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit82471bdff272d3c5119a0ef537e1001b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit82471bdff272d3c5119a0ef537e1001b::$classMap;
 
         }, null, ClassLoader::class);
     }

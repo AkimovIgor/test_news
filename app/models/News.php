@@ -32,16 +32,23 @@ class News extends Model
         ],
     ];
 
-    public function addImage($data)
+    /**
+     * Добавить изображение
+     *
+     * @param array $file Массив $_FILES
+     *
+     * @return bool
+     */
+    public function addImage($file)
     {
-        if ($data['image']['error'] < 1) {
+        if ($file['image']['error'] < 1) {
             $uploadDir = WWW . '/images/';
             $availableExt = ['jpg', 'jpeg', 'png', 'gif'];
-            $extension = pathinfo($data['image']['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($file['image']['name'], PATHINFO_EXTENSION);
             $fileName = uniqid() . '.' . $extension;
             $uploadFile = $uploadDir . $fileName;
             if (in_array($extension, $availableExt)) {
-                $this->uploadFile($data['image'], $uploadDir, $data['image']['name'], $uploadFile);
+                $this->uploadFile($file['image'], $uploadDir, $file['image']['name'], $uploadFile);
                 $this->attributes['image'] = $fileName;
                 return true;
             } else {
@@ -51,6 +58,13 @@ class News extends Model
         return false;
     }
 
+    /**
+     * Удалить изображение
+     *
+     * @param array $item Массив данных записи из БД
+     *
+     * @return void
+     */
     public function deleteImage($item)
     {
 

@@ -106,7 +106,6 @@ class Router
      */
     public static function dispatch($url)
     {
-//        dd($url, 0);
         $url = self::removeGetParams($url);
         if (self::matchRoutes($url)) {
             $controller = CONTROLLERS 
@@ -114,6 +113,7 @@ class Router
                 . self::upper(self::$currentRoute['controller']) . 'Controller';
             if (class_exists($controller)) {
                 $cObj = new $controller(self::$currentRoute);
+
                 $action = self::lower(self::$currentRoute['action']) . 'Action';
                 if (method_exists($cObj, $action)) {
                     $cObj->$action();

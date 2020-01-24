@@ -5,7 +5,6 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/vlucas/valitron" />
       <path value="$PROJECT_DIR$/vendor/igoframework/core" />
-      <path value="$PROJECT_DIR$/vendor/igoframework/sql" />
     </include_path>
   </component>
 </project>

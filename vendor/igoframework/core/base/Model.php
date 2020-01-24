@@ -121,17 +121,10 @@ abstract class Model extends Db
         $v = new Validator($data);
         $v->rules($this->rules);
         $v->labels([
-            'name' => 'Имя',
-            'email' => 'Email',
             'title' => 'Заголовок',
             'anonce' => 'Анонс',
             'date' => 'Дата',
-            'password' => 'Пароль',
-            'password_confirmation' => 'Пароль ещё раз',
             'text' => 'Текст',
-            'current' => 'Текущий пароль',
-            'new_password' => 'Новый пароль',
-            'new_password_confirmation' => 'Новый пароль ещё раз',
         ]);
         if ($v->validate()) return true;
         $this->errors = $v->errors();
